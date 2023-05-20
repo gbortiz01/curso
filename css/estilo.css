@@ -167,5 +167,7 @@ a:hover{
   color: white;
 }
 
-
+.iniciogaleria{
+  display: flex;
+}
 
