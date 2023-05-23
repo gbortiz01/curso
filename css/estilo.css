@@ -3,55 +3,51 @@
   padding: 0;
 }
 
-body {
+main {
   background-color: black;
   color:#eee;
   font-family: Arial, sans-serif;
+  margin: 0%;
+  padding:1%;
+  width: 100%;
   }
 
-  header {
-  width: 100%;
-  margin: 0%;
-  background-color: #828282;
-  padding:1%;
-  text-align:center;
-  font-size: 10px;
-  }
 
   h1, h2, h3 {
     color: #828282;
   }
+
    
 .titulo{
   font-family: 'Merriweather', serif;
   font-weight: 100%;
-  font-size:18px;
+  font: size 40px;
   text-align: center;
-  margin: 1%;
-  padding: 2%;
-  }
-
-  nav ul {
-  list-style: none;
-  display: flex;
-  justify-content:space-evenly;
+  margin: auto;
+  padding: 0%;
   width: 100%;
-  padding: 1%;
-  margin: 1px;;
+  margin-top: auto;
   }
 
-  nav ul li {
-  font-size: 18px;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
   
-  nav ul li a {
-  color: #eee;
-  padding: 10px;
+  .navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin: 1px;
+    background-color: #828282;
+    justify-content:space-between;
+    font-size:20px;
+    position:sticky
   }
-  
-  nav ul li a:hover {
-    background-color: #ccc;
-  }
+
   
   .destacado {
     display: flex;
@@ -85,62 +81,88 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
- #img {
- image-orientation: 3deg;
- border-image: fill;
-  }
+
 
 .discografia{
   margin:auto;
   padding: 1%;
   width: 100%;
 }
-
+#imghistoria {
+  margin: 0%;
+  padding: 1%;
+  width: 100%;
+  }
 
 .historia {
  font-family: Georgia, 'Times New Roman', Times, serif;
  text-align:center;
  margin: 10%;
  padding: 30%;
-  }
 
+  }
+ 
  .spotify{
   margin: 1%;
   border-radius: 5%;
   }
 
-.galeria{
-  width: 100%;
-  height:100%;
-  padding: 1%;
-  list-style: none;
-  margin: 1%;
-  }
-.galeriaimg{
-height: 80px;
-width: 100px;
-display: inline;
-padding: 5px;
-object-fit: cover;
-}
-
 .parrafocontacto {
  font-family: 'Dancing Script', cursive; 
- font-size: 25px;
- margin: 1%;
+ font-size: 33px;
+ margin: 0%;
   }
-        
+  .fondocontacto{
+    padding: 5px 5px 5px 5px;
+  }      
 .form{
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: 19px;
+  font-family:Helvetica, sans-serif;
+  font-size: 14px;
   text-align:center;
-  margin:5%;     
+  margin: 10%;
+  orientation: landscape;
+  background: url(https://pastillasdelabuelo.com.ar/wp-content/uploads/2019/07/banda_2019.jpg) no-repeat center;
+  background-size:contain;
+  background-position: center;
+  padding: 10px 10px 10px 10px; 
+  border-top: 6px solid white;
+  box-shadow: 0px 0px 10px 5px white;
 }
+@media (max-width: 480px) {
+  .titulo {
+    text-align: center;
+  }
+  
+  .form {
+    margin: 0 auto;
+    max-width: 300px;
+    margin: 5%;
+    padding: 12vw;
+    border-top-width: 2vw;
+    box-shadow: 0px 0px 4vw 2vw white;
+  }
+  
+  .form label,
+  .form input,
+  .form textarea,
+  .form input[type="button"],
+  .form input[type="reset"] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form input[type="button"],
+  .form input[type="reset"] {
+    margin-top: 10px;
+  }
+}
+
    
 .footer {
     width: 100%;
     height: 30%;
     padding: 1%;
+    margin: 0%;
     border-top: 1px solid #ccc;
     background-color: #828282; 
     text-align: center;
@@ -161,13 +183,28 @@ object-fit: cover;
 
 a{
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #eee;
+
 }
 a:hover{
-  color: white;
+  color: rgb(190, 185, 185);
+  background-color: #828282;
 }
 
 .iniciogaleria{
   display: flex;
 }
+
+
+@media (max-width: 480px) {
+.footer{
+  width: 100%;
+  background-color: #828282;
+}
+.main{
+  width: 100%;
+}
+}
+
 
