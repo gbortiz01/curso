@@ -1,0 +1,149 @@
+$color-primario: #c5c0c0;
+$color-secundario: #eee;
+
+*{
+margin: 0;
+padding: 0;
+}
+
+
+main {
+    background-color: black;
+    color: $color-secundario;
+    font-family: Arial, sans-serif;
+    margin: 0%;
+    padding: 1%;
+    width: 100%;
+  }
+  h1, h2, h3 {
+    color: #828282;
+  }
+  
+  .titulo {
+    font-family: serif;
+    font-weight: 100%;
+    font-size: 30px;
+    text-align: center;
+    margin: 1%;
+    padding: 0%;
+    width: 100%;
+    margin-top: auto;
+  }
+  
+  .containerindex {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin: 1px;
+    background-color: $color-primario;
+    justify-content: space-between;
+    font-size: 20px;
+    position: sticky;
+  }
+  
+  .imgcarruselindex {
+    margin: 5;
+    padding: 0;
+    
+    }
+
+      
+    .destacado {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5%;
+
+    .imgretro{
+      transform: translate(30px, 0px);
+      display: flex;
+      justify-content: space-between;
+
+    }
+      img {
+        width: 30%;
+        height: 10%;
+      }
+    
+      .texto-destacado {
+        width: 50%;
+        padding: 30px;
+      }
+    
+      h3 {
+        font-size: 25px;
+        margin-bottom: 10px;
+        font-family: 'Courier New', Courier, monospace;
+      }
+    
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+    }
+    @media (max-width: 480px) {
+      #inicio .destacado {
+          flex-direction: column;
+      }
+      #inicio .imgretro {
+        display: flex;
+        flex-direction: column;
+      }
+      #inicio .destacado img  {
+          max-width: 100%;
+          height: auto;
+      }
+      #inicio .texto-destacado {
+          margin-top: 10px;
+      }
+    }
+
+    .cardindex {
+        background-color: $color-primario;
+        color: #000000;
+        box-shadow:  0px 2px 10px rgba(160,160,160);
+    }
+    .discografia {
+      margin: auto;
+      padding: 1%;
+      width: 100%;}
+
+      .linkindex {
+        text-decoration: none;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        color: $color-primario;
+        font-size: 20px;
+        border-radius: 1px;
+        transition: color 0.3s ease, background-color 0.3s ease;
+      
+        &:hover {
+          color: rgb(53, 53, 53);
+          background-color: $color-primario;
+          border-radius: 5px;
+        }
+      }
+      .botoncard {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #F5F5F5;
+        color: black;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+      
+      .botoncard:hover {
+        background-color: $color-secundario;
+        color: black;
+      }
+      
+      

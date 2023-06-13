@@ -1,0 +1,21 @@
+$color-primario: #c5c0c0;
+$color-secundario: #eee;
+
+    .spotify {
+        margin: 1%;
+        border-radius: 5%;
+        display: flex;
+        justify-content:space-around;
+        
+        &:hover {
+          transform: scale(1.2);
+        }
+      
+      }
+    .imgmusica {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 50%;
+    }
+
