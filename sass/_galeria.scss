@@ -1,0 +1,77 @@
+$image-size: 200px;
+$gap-size: 1rem;
+$breakpoints: (
+  "small": 320px,
+  "medium": 768px,
+  "large": 1024px
+) !default;
+
+// Estilos de la galería
+.grid-gallery {
+  display: grid;
+  grid-auto-rows: $image-size;
+  grid-gap: $gap-size;
+  grid-auto-flow: row dense;
+
+  @media all and (min-width: map-get($breakpoints, 'small')) {
+    $num-columns: 1;
+    grid-template-columns: 1fr;
+  }
+
+  @media all and (min-width: map-get($breakpoints, 'medium')) {
+    $num-columns: 3;
+    grid-template-columns: repeat($num-columns, 1fr);
+  }
+
+  @media all and (min-width: map-get($breakpoints, 'large')) {
+    $num-columns: 6;
+    grid-template-columns: repeat($num-columns, 1fr);
+  }
+
+  &__item {
+    &:nth-child(11n+1) {
+      grid-column: span 1;
+    }
+
+    &:nth-child(11n+4) {
+      grid-column: span 2;
+      grid-row: span 1;
+
+      @media all and (min-width: map-get($breakpoints, 'small')) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+    }
+
+    &:nth-child(11n+6) {
+      grid-column: span 3;
+      grid-row: span 1;
+    }
+
+    &:nth-child(11n+7) {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+
+    &:nth-child(11n+8) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    &:nth-child(11n+9) {
+      grid-row: span 3;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+
+  
+  
+  

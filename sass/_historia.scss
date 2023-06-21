@@ -31,14 +31,27 @@ main {
     position: sticky;
   }
   .card {
-    margin: 1%;
-    padding: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+
   }
   
-  .textocard {
-    text-align: center;
-    font-size: medium;
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+  
+  
+  .textocard {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
   
   
   .steps {

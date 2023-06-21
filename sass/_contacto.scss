@@ -1,6 +1,6 @@
 
-$color-primario: #c5c0c0;
-$color-secundario: #eee;
+$color-primario: #c5c0c09c;
+$color-secundario: #eeeeeec5;
 .subtitulogaleria {
     font-size: 25px;
     color: #ccc;
@@ -13,13 +13,14 @@ $color-secundario: #eee;
     font-size: 33px;
     margin: 0%;
     text-align: center;
-    color: #000;
+    color: #fffbfb;
   }
   
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
   
   .form-container {
@@ -31,14 +32,14 @@ $color-secundario: #eee;
     text-align: center;
   }
   
-  .image-container img {
-    max-width: 100%;
-    height: auto;
-  }
   
+  .textoform {
+    margin: 15px;
+  } 
+
   .form {
     font-family: Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     color: $color-primario;
     text-align: center;
     font-style: italic;
@@ -48,7 +49,27 @@ $color-secundario: #eee;
   }
   
   
+
+  input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    padding: 5px;
+    outline: none;
+    color: $color-secundario;
+    
+    &:focus {
+      border-bottom-color: #000;
+    }
+  }
+  
+  
   @media (max-width: 480px) {
+    .titulo {
+      font-size: 10px;
+
+    }
+
     .container {
       flex-direction: column;
     }
@@ -56,13 +77,13 @@ $color-secundario: #eee;
     .form-container {
       margin-right: 0;
       margin-bottom: 2rem;
+      
     }
   
-    .image-container {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-  
+  .subtitulogaleria{
+    font-size: 16px;
+  }
+
     .form {
       margin: 2rem;
       padding: 2rem;
@@ -82,9 +103,5 @@ $color-secundario: #eee;
       margin-top: 1rem;
     }
   
-    .form img {
-      max-width: 100%;
-      height: auto;
-    }
   }
   

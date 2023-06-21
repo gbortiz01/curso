@@ -8,7 +8,7 @@ padding: 0;
 
 
 main {
-    background-color: black;
+    background-color: rgb(39, 39, 39);
     color: $color-secundario;
     font-family: Arial, sans-serif;
     margin: 0%;
@@ -18,11 +18,31 @@ main {
   h1, h2, h3 {
     color: #828282;
   }
+
+  .logotitulo {
+    display: flex;
+    justify-content: center;
+    
+    img {
+      margin-right: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      
+      img {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  
+  
   
   .titulo {
     font-family: serif;
     font-weight: 100%;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     margin: 1%;
     padding: 0%;
@@ -125,8 +145,8 @@ main {
       .botoncard {
         display: inline-block;
         padding: 10px 20px;
-        background-color: #F5F5F5;
-        color: black;
+        background-color: #000000;
+        color: rgb(255, 255, 255);
         font-size: 16px;
         border: none;
         border-radius: 5px;
