@@ -1,10 +1,11 @@
 $image-size: 200px;
 $gap-size: 1rem;
 $breakpoints: (
-  "small": 320px,
+  "small": 420px,
   "medium": 768px,
-  "large": 1024px
-) !default;
+  "large": 1024px,
+  "mobile": 480px
+);
 
 // Estilos de la galería
 .grid-gallery {
@@ -12,15 +13,18 @@ $breakpoints: (
   grid-auto-rows: $image-size;
   grid-gap: $gap-size;
   grid-auto-flow: row dense;
-
-  @media all and (min-width: map-get($breakpoints, 'small')) {
+  overflow-x: hidden; // Ocultar scroll horizontal en dispositivos móviles
+  
+  @media all and (min-width: map-get($breakpoints, 'mobile')) {
     $num-columns: 1;
     grid-template-columns: 1fr;
+    width: 100%;
   }
 
   @media all and (min-width: map-get($breakpoints, 'medium')) {
     $num-columns: 3;
     grid-template-columns: repeat($num-columns, 1fr);
+    width: 100%;
   }
 
   @media all and (min-width: map-get($breakpoints, 'large')) {
@@ -37,7 +41,7 @@ $breakpoints: (
       grid-column: span 2;
       grid-row: span 1;
 
-      @media all and (min-width: map-get($breakpoints, 'small')) {
+      @media all and (min-width: map-get($breakpoints, 'mobile')) {
         grid-column: span 1;
         grid-row: span 1;
       }
@@ -68,10 +72,4 @@ $breakpoints: (
     height: 100%;
     object-fit: cover;
   }
-}
-
-
-
-  
-  
-  
+}  

@@ -1,4 +1,4 @@
-$color-primario: #c5c0c0;
+$color-primario: #bdb9b9;
 $color-secundario: #eee;
 
 *{
@@ -79,8 +79,6 @@ main {
       align-items: center;
       margin: 5%;}
     
-
-    
       .texto-destacado {
         width: 50%;
         padding: 30px;
@@ -128,13 +126,15 @@ main {
       padding: 1%;
       width: 100%;}
 
-      .linkindex {
+      .linkindex { 
+        @extend .boton;
         text-decoration: none;
         font-family: Georgia, Times, 'Times New Roman', serif;
-        color: $color-primario;
+        color: black;
         font-size: 20px;
         border-radius: 1px;
         transition: color 0.3s ease, background-color 0.3s ease;
+        background-color: $color-primario;
       
         &:hover {
           color: rgb(53, 53, 53);
@@ -142,17 +142,21 @@ main {
           border-radius: 5px;
         }
       }
-      .botoncard {
+      .boton {
         display: inline-block;
         padding: 10px 20px;
-        background-color: #000000;
-        color: rgb(255, 255, 255);
         font-size: 16px;
         border: none;
         border-radius: 5px;
         text-decoration: none;
         transition: background-color 0.3s ease;
       }
+
+    .botoncard1 {
+      @extend .boton;
+      background-color: #000000;
+      color: rgb(255, 255, 255);
+    }
       
       .botoncard:hover {
         background-color: $color-secundario;
