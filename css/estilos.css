@@ -9,7 +9,6 @@ main {
   font-family: Arial, sans-serif;
   margin: 0%;
   padding: 1%;
-  width: 100%;
 }
 
 h1, h2, h3 {
@@ -618,6 +617,234 @@ input[type=text]:focus {
 
 .logo img {
   height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background-color: rgb(70, 69, 69);
+}
+
+aside {
+  padding: 2rem;
+  color: #bdb9b9;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.boton-menu {
+  background-color: transparent;
+  border: 0;
+  color: #bdb9b9;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+  padding: 1rem;
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+.boton-menu.active {
+  background-color: #bdb9b9;
+  color: rgb(70, 69, 69);
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  position: relative;
+}
+
+.boton-menu.active::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 2rem;
+  bottom: 100%;
+  right: 0;
+  background-color: transparent;
+  border-top-right-radius: 5rem;
+  box-shadow: 0 1rem 0 var white;
+}
+
+.boton-carrito {
+  margin: 1rem;
+}
+
+.main-tienda {
+  background-color: #eee;
+  margin: 2rem;
+  margin-left: -1rem;
+  border-radius: 4rem;
+  padding: 5rem;
+}
+
+.titulo-principal {
+  color: #bdb9b9;
+  margin-bottom: 2rem;
+}
+
+.contenedor-productos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.producto-imagen {
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+.producto-detalle {
+  text-align: center;
+  background-color: rgb(70, 69, 69);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-top: -2rem;
+  position: relative;
+  margin: 2%;
+}
+
+.producto-titulo {
+  font-size: 2rem;
+}
+
+.producto-agregar {
+  border: 0;
+  background-color: #bdb9b9;
+  border-radius: 2rem;
+  padding: 0.4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s color 0.2s;
+}
+
+.producto-agregar:hover {
+  background-color: #eee;
+  color: black;
+}
+
+/**CARRITO**/
+.contenedor-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.carrito-vacio,
+.carrito-comprado {
+  color: rgb(70, 69, 69);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.carrito-productos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.carrito-producto {
+  display: flex;
+  justify-content: space-between;
+  background-color: #bdb9b9;
+  color: rgb(70, 69, 69);
+  padding: 0.5rem;
+  padding-right: 1.5rem;
+  border-radius: 1rem;
+  align-items: center;
+}
+
+.producto-imagen-carrito {
+  width: 4rem;
+  border-radius: 3rem;
+}
+
+.producto-carrito-small {
+  font-size: 0.75rem;
+}
+
+.carrito-producto-eliminar {
+  background-color: #bdb9b9;
+  color: rgb(70, 69, 69);
+  font-size: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.carrito-acciones-derecha {
+  display: flex;
+}
+
+.carrito-acciones-total {
+  display: flex;
+  background-color: rgb(70, 69, 69);
+  padding: 1rem;
+  color: #eee;
+  text-transform: uppercase;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  gap: 1rem;
+}
+
+.carrito-acciones-comprar {
+  border: 0;
+  background-color: rgb(70, 69, 69);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #eee;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.disabled {
+  display: none;
+}
+
+.numero {
+  background-color: white;
+  color: black;
+  padding: 0.15rem 0.25rem;
+  border-radius: 0.25rem;
 }
 
 /*# sourceMappingURL=estilos.css.map */
