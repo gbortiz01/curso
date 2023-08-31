@@ -1,47 +1,11 @@
-const productList = [
-    { id:1, 
-     imagen: "https://dqz5dwjvgn3kd.cloudfront.net/5nz897tnk/5nz897tnk-25-front-600x600.png",
-     titulo: "Remera Unisex con Logo",
-     categoria:{
-        nombre:"Remeras",
-        id:"Remeras",},
-      precio: 4000 },
-    { id:2,
-     imagen: "https://dqz5dwjvgn3kd.cloudfront.net/5oeh6lsu5/5oeh6lsu5-25-front-600x600.png",
-     titulo: "Remera Aprender",
-     categoria:{
-        nombre:"Remeras",
-        id:"Remeras",},
-      precio: 4000 }, 
-    { id:3,
-     imagen: "//http2.mlstatic.com/D_NQ_NP_850115-MLA27068879470_032018-O.webp",
-     titulo: " Body Bebe",
-     categoria:{
-        nombre:"Body",
-        id:"Body",},
-     precio: 4500 },
-    { id:4, 
-    imagen: "https://http2.mlstatic.com/D_NQ_NP_979145-MLA27068901253_032018-O.webp",
-     titulo: "Body mangas largas ", 
-     categoria:{
-        nombre:"Body",
-        id:"Body",},
-     precio: 4720 },
-    { id:5,
-     imagen: "https://http2.mlstatic.com/D_NQ_NP_741856-MLA70857724290_082023-O.webp",
-     titulo: "Buzo Cálido",
-      categoria:{
-        nombre:"Buzos",
-        id:"Buzos",},
-     precio: 14000 },
-    { id:6,
-     imagen: "https://http2.mlstatic.com/D_NQ_NP_879630-MLA70151439200_062023-O.webp",
-     titulo: "Buzo Estampado", 
-     categoria:{
-        nombre:"Buzos",
-        id:"Buzos",},
-     precio: 12500 },
-  ];
+let productList = [];
+
+fetch("./script/productos.json")
+.then(response => response.json())
+.then(data => {
+    productList = data;
+    cargarproductList(productList);
+})
  
 const contenedorProductos = document.querySelector ("#contenedor-productos");
 const botonesCategoria = document.querySelectorAll(".boton-categoria");
@@ -62,7 +26,7 @@ function cargarproductList(productosElegidos){
      <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
     <div class="producto-detalle">
         <h3 class="producto-titulo">${producto.titulo}</h3>
-        <p class="producto-precio">${producto.precio}</p>
+        <p class="producto-precio">$${producto.precio}</p>
         <button class="producto-agregar" id="${producto.id}">Agregar</button>
     </div>
     `;
@@ -75,7 +39,7 @@ function cargarproductList(productosElegidos){
 
 }
 
-cargarproductList(productList);
+
 
 botonesCategoria.forEach(boton => {
     boton.addEventListener("click", (e) => {
@@ -110,7 +74,7 @@ let productosEnCarrito;
 let productosEnCarritoLS = localStorage.getItem("producto-en-carrito");
 
 if(productosEnCarritoLS) {
-     productosEnCarrito = JSON.parseInt(localStorage.getItem("productos-en-carrito"));
+     productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito"));
     actualizarNumero();
 } else {
 
