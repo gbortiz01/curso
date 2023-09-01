@@ -78,12 +78,25 @@ aside{
     bottom: 100%;
     right: 0;
     background-color: transparent;
-    border-top-right-radius: 5rem;
-    box-shadow: 0 1rem 0 var  white;
+    border-bottom-right-radius: 5rem;
+    box-shadow: 0 1rem 0 var(white);
 }
 
+.boton-menu.active::after {
+    content:'';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    bottom: 100%;
+    right: 0;
+    background-color: transparent;
+    border-top-right-radius: 5rem;
+    box-shadow: 0 -1rem 0 var(white);}
+
+
+
 .boton-carrito{
-    margin: 1rem;
+    margin-top: 2rem;
 }
 .main-tienda{
     background-color: $color-secundario;
@@ -189,6 +202,21 @@ aside{
     cursor: pointer;
 }
 
+.carrito-acciones{
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrito-acciones-vaciar{
+    border: 0;
+    background-color: $color-primario;
+    color: $color-terciario;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
 .carrito-acciones-derecha{
     display: flex;
 }
@@ -199,21 +227,21 @@ aside{
     padding: 1rem;
     color: $color-secundario;
     text-transform: uppercase;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    gap: 1rem;
+   border-top-left-radius: 1rem;
+   border-bottom-left-radius: 1rem;
+   gap: 1rem;
+    
 }
 
 .carrito-acciones-comprar{
     border: 0;
-    background-color: $color-terciario;
+    background-color: $color-primario;
+    color: $color-terciario;
     padding: 1rem;
-    border-radius: 1rem;
-    color: $color-secundario;
     text-transform: uppercase;
     cursor: pointer;
-    border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
 
 
@@ -227,4 +255,53 @@ aside{
     padding: 0.15rem .25rem;
     border-radius: .25rem;
 
+}
+
+#resumen-compra {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  
+  #resumen-compra h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #resumen-compra p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  #resumen-compra ul {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  #resumen-compra strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #resumen-compra .disabled {
+    display: none;
+  }
+  .boton-imprimir {
+    display: none;
+}
+.boton-imprimir {
+    display: none;
+    background-color: $color-primario;
+    color: $color-terciario;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.boton-imprimir:hover {
+    background-color: #333;
 }

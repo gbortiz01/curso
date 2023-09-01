@@ -10,6 +10,8 @@ let botonEliminar = document.querySelectorAll(".carrito-producto-eliminar");
 const botonVaciar = document.querySelector("#carrito-acciones-vaciar");
 const contenedorTotal = document.querySelector("#total");
 const botonComprar = document.querySelector("#carrito-acciones-comprar");
+const resumenCompra = document.querySelector("#resumen-compra");
+const botonImprimir = document.querySelector("#imprimir-resumen");
 
 
 
@@ -45,7 +47,7 @@ function cargarProductosCarrito(){
         </div>
         <div class="carrito-producto-subtotal">
         <small>Subtotal</small>
-        <p>${producto.precio} * ${producto.cantidad} </p>
+        <p>$${producto.precio * producto.cantidad} </p>
         </div><button class="carrito-producto-eliminar" id= ${producto.id} ><i class="bi bi-trash3"></i> Eliminar</i></button>  </div>
         `;
     
@@ -78,12 +80,27 @@ function actualizarBotonesEliminar (){
 }
 
 function eliminarDelCarrito(e) {
+
+    Toastify({
+        text: "¡Se elimino exitosamente!",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "rigth", 
+        stopOnFocus: true, 
+        style: {
+          background: "linear-gradient(to right, #000000, #e5e5e5)",
+          borderRadius: "2rem",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
     const idBoton = parseInt(e.currentTarget.id);
     const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
   
     productosEnCarrito.splice(index, 1);
-
-    cargarProductosCarrito();
+     cargarProductosCarrito();
 
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
@@ -91,10 +108,22 @@ function eliminarDelCarrito(e) {
 botonVaciar.addEventListener("click", vaciarCarrito);
 
 function vaciarCarrito(){
-
-    productosEnCarrito = [];
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito) );
-    cargarProductosCarrito();
+    
+Swal.fire({
+    title: '¿Estas seguro?',
+    icon: 'question',
+    html:'Se eliminaran todos los elementos agregados a su carrito',
+    showCancelButton: true,
+    focusConfirm: false,
+    confirmButtonText:'¡Si!',
+    cancelButtonText:'¡No!',
+  }).then((result) => {
+    if (result.isConfirmed) {
+        productosEnCarrito = [];
+        localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito) );
+        cargarProductosCarrito();    
+    } 
+  })
 
 }
 
@@ -106,14 +135,55 @@ function actualizarTotal (){
 
 botonComprar.addEventListener("click", comprarCarrito);
 
-function comprarCarrito(){
-
+function comprarCarrito() {
+    Swal.fire({
+      title: '¡Muchas gracias por elegirnos!',
+      text: 'Esperamos volver a verte.',
+      imageUrl: 'https://www.pastillas.com.ar/images/logo.png',
+      imageWidth: 400,
+      imageHeight: 200,
+      imageAlt: 'Custom image',
+    });
+  
+    mostrarResumenDeCompra();
+  
     productosEnCarrito = [];
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito) );
-    
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+  
     carritoVacio.classList.add("disabled");
     contenedorProductos.classList.add("disabled");
     carritoAcciones.classList.add("disabled");
     carritoComprado.classList.remove("disabled");
+  }
+  
+  botonComprar.addEventListener("click", comprarCarrito);
+  
 
+  function mostrarResumenDeCompra() {
+    const resumenCompra = document.getElementById("resumen-compra");
+    const numeroPedido = Math.round(Math.random() * 1000000 + 600000);
+    const productosCompradosHTML = productosEnCarrito.map(producto => {
+        return `<li>${producto.cantidad}x ${producto.titulo} - $${producto.precio * producto.cantidad}</li>`;
+      }).join('');
+
+    const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+    const resumenHTML = `
+      <h2>Resumen de la Compra</h2>
+      <p>Número de Pedido: <strong>${numeroPedido}</strong></p>
+      <p>Productos seleccionados:</p>
+      <ul>${productosCompradosHTML}</ul>
+      <p>Total de la Compra: <strong>$${totalCalculado.toFixed(2)}</strong></p>
+      <p> <strong>¡IMPORTANTE!</strong></p>
+      <p> Por el momento solo contamos con pago en efectivo en el local. Podes acercarte a partir de las 48hs en Siempreviva 1111 C.A.B.A. con tu N° de pedido.</p>
+    `;
+  
+    resumenCompra.innerHTML = resumenHTML;
+    botonImprimir.style.display = "block";
+    botonImprimir.addEventListener("click", () => {
+        // Abre la ventana de impresión del navegador
+        window.print();
+      });
+    resumenCompra.classList.remove("disabled");
 }
+
+  

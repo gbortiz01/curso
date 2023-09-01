@@ -699,12 +699,24 @@ aside {
   bottom: 100%;
   right: 0;
   background-color: transparent;
+  border-bottom-right-radius: 5rem;
+  box-shadow: 0 1rem 0 var(white);
+}
+
+.boton-menu.active::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 2rem;
+  bottom: 100%;
+  right: 0;
+  background-color: transparent;
   border-top-right-radius: 5rem;
-  box-shadow: 0 1rem 0 var white;
+  box-shadow: 0 -1rem 0 var(white);
 }
 
 .boton-carrito {
-  margin: 1rem;
+  margin-top: 2rem;
 }
 
 .main-tienda {
@@ -809,6 +821,21 @@ aside {
   cursor: pointer;
 }
 
+.carrito-acciones {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carrito-acciones-vaciar {
+  border: 0;
+  background-color: #bdb9b9;
+  color: rgb(70, 69, 69);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 .carrito-acciones-derecha {
   display: flex;
 }
@@ -820,20 +847,19 @@ aside {
   color: #eee;
   text-transform: uppercase;
   border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
   gap: 1rem;
 }
 
 .carrito-acciones-comprar {
   border: 0;
-  background-color: rgb(70, 69, 69);
+  background-color: #bdb9b9;
+  color: rgb(70, 69, 69);
   padding: 1rem;
-  border-radius: 1rem;
-  color: #eee;
   text-transform: uppercase;
   cursor: pointer;
-  border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .disabled {
@@ -845,6 +871,59 @@ aside {
   color: black;
   padding: 0.15rem 0.25rem;
   border-radius: 0.25rem;
+}
+
+#resumen-compra {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+#resumen-compra h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#resumen-compra p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+#resumen-compra ul {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+#resumen-compra strong {
+  font-weight: bold;
+  color: #333;
+}
+
+#resumen-compra .disabled {
+  display: none;
+}
+
+.boton-imprimir {
+  display: none;
+}
+
+.boton-imprimir {
+  display: none;
+  background-color: #bdb9b9;
+  color: rgb(70, 69, 69);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.boton-imprimir:hover {
+  background-color: #333;
 }
 
 /*# sourceMappingURL=estilos.css.map */
