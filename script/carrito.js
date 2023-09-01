@@ -93,7 +93,7 @@ function eliminarDelCarrito(e) {
           background: "linear-gradient(to right, #000000, #e5e5e5)",
           borderRadius: "2rem",
         },
-        onClick: function(){} // Callback after click
+        onClick: function(){} 
       }).showToast();
 
     const idBoton = parseInt(e.currentTarget.id);
@@ -180,7 +180,6 @@ function comprarCarrito() {
     resumenCompra.innerHTML = resumenHTML;
     botonImprimir.style.display = "block";
     botonImprimir.addEventListener("click", () => {
-        // Abre la ventana de impresión del navegador
         window.print();
       });
     resumenCompra.classList.remove("disabled");

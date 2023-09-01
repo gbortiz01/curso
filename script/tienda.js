@@ -103,10 +103,8 @@ function actualizarNumero() {
   numero.innerText = nuevoNumero;
 }
 
-// Cargar productos al inicio
 cargarProductos();
 
-// Cargar carrito desde localStorage si existe
 const productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
 
 if (productosEnCarritoLS) {
