@@ -1,4 +1,4 @@
-let productosEnCarrito = localStorage.getItem("productos-en-carrito");
+let productosEnCarrito = localStorage.getItem("carrito");
 productosEnCarrito = JSON.parse(productosEnCarrito);
 
 
@@ -18,8 +18,6 @@ const botonImprimir = document.querySelector("#imprimir-resumen");
 function cargarProductosCarrito(){
 
     if(productosEnCarrito && productosEnCarrito.length > 0){
-
-
         carritoVacio.classList.add("disabled");
         contenedorProductos.classList.remove("disabled");
         carritoAcciones.classList.remove("disabled");
@@ -160,7 +158,6 @@ function comprarCarrito() {
   
 
   function mostrarResumenDeCompra() {
-    const resumenCompra = document.getElementById("resumen-compra");
     const numeroPedido = Math.round(Math.random() * 1000000 + 600000);
     const productosCompradosHTML = productosEnCarrito.map(producto => {
         return `<li>${producto.cantidad}x ${producto.titulo} - $${producto.precio * producto.cantidad}</li>`;
@@ -184,5 +181,3 @@ function comprarCarrito() {
       });
     resumenCompra.classList.remove("disabled");
 }
-
-  

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -640,6 +641,7 @@ a {
   background-color: rgb(70, 69, 69);
 }
 
+/* Aside */
 aside {
   padding: 2rem;
   color: #bdb9b9;
@@ -649,13 +651,13 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #bdb9b9;
+  background-color: #bdb9b9; /* Cambio de fondo */
 }
 
 .logo {
   font-weight: 400;
   font-size: 1.3rem;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Espaciado inferior */
 }
 
 .menu {
@@ -676,7 +678,7 @@ aside {
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Espaciado inferior */
 }
 
 .filtro-categorias:hover,
@@ -688,30 +690,26 @@ aside {
   border: 2px solid #eee;
 }
 
+/* Main Tienda */
 .main-tienda {
   background-color: #eee;
   margin: 2rem;
   margin-left: 1rem; /* Ajuste de margen izquierdo */
   border-radius: 4rem;
-  padding: 2rem;
+  padding: 2rem; /* Reducción de padding */
 }
 
 .titulo-principal {
   color: #bdb9b9;
-  font-size: 2rem;
+  font-size: 2rem; /* Tamaño de fuente aumentado */
   margin-bottom: 2rem;
 }
 
 .contenedor-productos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 2rem; /* Espaciado entre productos aumentado */
   margin: 1rem;
-}
-
-.producto-imagen {
-  max-width: 100%;
-  height: auto;
 }
 
 .producto-detalle {
@@ -722,28 +720,7 @@ aside {
   margin: 2%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
-  cursor: pointer;
-}
-
-.producto-carrito {
-  background-color: #f4f4f4;
-  color: rgb(70, 69, 69);
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
-}
-.producto-carrito:hover {
-  transform: translateY(-3px);
-}
-.producto-carrito .producto-imagen-carrito {
-  max-width: 100px;
-  height: auto;
-}
-.producto-carrito .producto-info {
-  text-align: left;
-  margin-top: 10px;
+  cursor: pointer; /* Cursor de apuntar */
 }
 
 .producto-detalle:hover {
@@ -751,8 +728,8 @@ aside {
 }
 
 #resumen-compra {
-  background-color: #bdb9b9;
-  color: #eee;
+  background-color: #bdb9b9; /* Fondo del resumen */
+  color: #eee; /* Color de texto del resumen */
   border-radius: 1rem;
   padding: 2rem;
   display: none;
@@ -768,11 +745,11 @@ aside {
   text-align: center;
   text-decoration: none;
   display: block;
-  margin-top: 1rem;
+  margin-top: 1rem; /* Espaciado superior */
 }
 
 #imprimir-resumen:hover {
   background-color: #2c2c2c;
 }
 
-/*# sourceMappingURL=estilos.css.map */
+/*# sourceMappingURL=estilos.scss.map */

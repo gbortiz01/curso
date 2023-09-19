@@ -19,56 +19,59 @@
 </head>
 <body>
     <div class="wrapper">   
-            <aside>
-                <header>
+        <aside>
+            <header>
                 <img class="logo" src="https://www.pastillas.com.ar/images/logo.png" height="80px" alt="Logo LPDA">
-                </header>  
-                <div>
-                    <nav>
-                        <ul class="menu">
-                           <li><a href="../index.html" class="boton-menu">Pagina Principal</a></li>
-                            <li><button id="Todos" class="boton-menu boton-categoria active">Productos</button></li>
-                            <li><button id="Remeras" class="boton-menu boton-categoria">Remeras</button></li>
-                            <li><button id="Buzos" class="boton-menu boton-categoria">Buzos</button></li>
-                            <li><button id="Body" class="boton-menu boton-categoria">Body Bebes</button></li>
-                            <li><a class="boton-menu boton-carrito"  href="./carrito.html">Carrito<span id="numero" class="numero">0</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
-              </aside>              
-        <main class="main-tienda">
-            <h2 id="titulo-principal" class="titulo-principal">Todos los productos</h2>
-            <div id="contenedor-productos" class="contenedor-productos">
-            // CODIGO JS //
+            </header>  
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="./carrito.html" class="boton-menu boton-carrito">Carrito</a></li>
+                    </ul>
+                </nav>
             </div>
-        </main>  
+            <footer class="footer">
+                <div  class="nombrefooter">
+                  <h3>Nuestras Redes</h3>
+                </div>
+          
+                <nav class="redes">
+                    <div>
+                        <a href="https://es-la.facebook.com/" target="_blank" >
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                        <a href="https://twitter.com/" target="_blank">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.tiktok.com/?lang=es" target="_blank" >
+                            <i class="fab fa-tiktok"></i> TikTok
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </nav>
+                <div class="logo">
+                    <img src="https://www.pastillas.com.ar/images/logo.png" height="80px" alt="Logo LPDA">
+                </div>
+            </footer>
+        </aside>
+       <main class="main-tienda">
+            <h2 class="titulo-principal">Nuestra Colección</h2>
+            <div class="filtro-categorias">
+                <button id="Todos" class="boton-filtro active">Todos</button>
+                <button id="Remeras" class="boton-filtro">Remeras</button>
+                <button id="Buzos" class="boton-filtro">Buzos</button>
+                <button id="Body" class="boton-filtro">Body Bebés</button>
+            </div>
+            <div id="contenedor-productos" class="contenedor-productos">
+               *CODIGO EN JS*    
+            </div>
+        </main> 
+        
     </div>
  
-    <footer class="footer">
-        <div  class="nombrefooter">
-          <h3>Nuestras Redes</h3>
-        </div>
-  
-        <nav class="redes">
-            <div>
-                <a href="https://es-la.facebook.com/" target="_blank" >
-                    <i class="fab fa-facebook"></i> Facebook
-                </a>
-                <a href="https://twitter.com/" target="_blank">
-                    <i class="fab fa-twitter"></i> Twitter
-                </a>
-                <a href="https://www.tiktok.com/?lang=es" target="_blank" >
-                    <i class="fab fa-tiktok"></i> TikTok
-                </a>
-                <a href="https://www.instagram.com/" target="_blank">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-            </div>
-        </nav>
-        <div class="logo">
-            <img src="https://www.pastillas.com.ar/images/logo.png" height="80px" alt="Logo LPDA">
-        </div>
-    </footer>
+    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> 
     <script src="../script/tienda.js"></script> 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
