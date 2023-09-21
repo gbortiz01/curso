@@ -714,6 +714,50 @@ aside {
   margin-bottom: 2rem;
 }
 
+.carrito-producto {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.carrito-producto .producto-imagen-carrito {
+  max-width: 80px;
+  max-height: 80px;
+  margin-right: 10px;
+}
+.carrito-producto .carrito-producto-titulo {
+  flex: 1;
+}
+.carrito-producto .carrito-producto-titulo h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.carrito-producto .carrito-producto-cantidad,
+.carrito-producto .carrito-producto-precio,
+.carrito-producto .carrito-producto-subtotal {
+  flex: 1;
+  text-align: center;
+}
+.carrito-producto .carrito-producto-cantidad p,
+.carrito-producto .carrito-producto-precio p,
+.carrito-producto .carrito-producto-subtotal p {
+  font-size: 1rem;
+  margin: 0;
+}
+.carrito-producto .carrito-producto-eliminar {
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.carrito-producto .carrito-producto-eliminar i {
+  margin-right: 5px;
+}
+
 #contenedor-productos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

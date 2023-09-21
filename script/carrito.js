@@ -132,6 +132,7 @@ const actualizarBotonesEliminar = () => {
           imageHeight: 200,
           imageAlt: 'Custom image',
       });
+      mostrarResumenDeCompra();
       productosEnCarrito = [];
       localStorage.setItem("carrito", JSON.stringify(productosEnCarrito));
 
@@ -140,6 +141,8 @@ const actualizarBotonesEliminar = () => {
       carritoAcciones.classList.add("disabled");
      
   }
+  
+  botonComprar.addEventListener("click", comprarCarrito);
 
   const mostrarResumenDeCompra = () => {
       const numeroPedido = Math.round(Math.random() * 1000000 + 600000);
@@ -164,6 +167,5 @@ const actualizarBotonesEliminar = () => {
       });
     resumenCompra.classList.remove("disabled");
       }      
-      botonComprar.addEventListener("click", comprarCarrito);
     cargarProductosCarrito();
 });
