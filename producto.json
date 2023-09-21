@@ -1,7 +1,7 @@
 [
     { "id":1, 
      "imagen": "https://dqz5dwjvgn3kd.cloudfront.net/5nz897tnk/5nz897tnk-25-front-600x600.png",
-     "titulo": "Remera Unisex con Logo",
+     "titulo": "Remera con Logo",
      "categoria":{
         "nombre":"Remeras",
         "id":"Remeras"},
@@ -22,7 +22,7 @@
      "precio": 4500 },
     { "id":4, 
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_979145-MLA27068901253_032018-O.webp",
-     "titulo": "Body mangas largas ", 
+     "titulo": "Body m largas ", 
      "categoria":{
         "nombre":"Body",
         "id":"Body"},

@@ -664,7 +664,12 @@ aside {
   gap: 1rem;
 }
 
+.carrito-vacio {
+  color: rgb(70, 69, 69);
+}
+
 .filtro-categorias,
+.carrito-producto-eliminar,
 .producto-agregar,
 .carrito-acciones-vaciar,
 .carrito-acciones-comprar {
@@ -672,7 +677,7 @@ aside {
   color: rgb(70, 69, 69);
   border: 2px solid #bdb9b9;
   border-radius: 1rem;
-  padding: 1rem 2rem;
+  padding: 1%;
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
@@ -686,6 +691,13 @@ aside {
   background-color: #bdb9b9;
   color: #eee;
   border: 2px solid #eee;
+}
+
+.carrito-producto-cantidad,
+.carrito-producto-precio,
+.carrito-producto-subtotal,
+.carrito-acciones-total {
+  color: rgb(70, 69, 69);
 }
 
 .main-tienda {
@@ -702,11 +714,11 @@ aside {
   margin-bottom: 2rem;
 }
 
-.contenedor-productos {
+#contenedor-productos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin: 1rem;
+  gap: 2;
+  margin: 1%;
 }
 
 .producto-imagen {
@@ -723,6 +735,7 @@ aside {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
   cursor: pointer;
+  color: rgb(70, 69, 69);
 }
 
 .producto-carrito {
@@ -773,6 +786,10 @@ aside {
 
 #imprimir-resumen:hover {
   background-color: #2c2c2c;
+}
+
+#imprimir-resumen {
+  display: none;
 }
 
 /*# sourceMappingURL=estilos.css.map */

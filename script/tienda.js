@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       mostrarProductos(productosFiltrados);
     }
   }
+  
 
   const agregarAlCarrito = (producto) => {
     Toastify({

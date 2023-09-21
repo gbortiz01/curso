@@ -60,12 +60,12 @@
         </aside>
     </header>
     <main class="main-tienda">
-        <h2 class="titulo-principal">Carrito<i class="bi bi-cart4"></i></h2>
+        <h2 class="titulo-principal">Carrito <i class="bi bi-cart4"></i></h2>
         <div class="contenedor-carrito">
-            <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío<i class="bi bi-emoji-frown"></i></p>
+            <p id="carrito-vacio" class="carrito-vacio disabled">Tu carrito está vacío <i class="bi bi-emoji-frown"></i></p>
             <div id="contenedor-productos" class="carrito-productos disabled">
-                <!-- Aquí se mostrarán los productos en el carrito -->
-            </div>    
+                <!-- Los productos del carrito se agregarán aquí desde JavaScript -->
+            </div>
             <div id="carrito-acciones" class="carrito-acciones disabled">
                 <div class="carrito-acciones-izquierda">
                     <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
@@ -77,13 +77,12 @@
                     </div>
                     <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar Ahora</button>
                 </div>
-                <p id="carrito-comprado" class="carrito-comprado disabled">¡Gracias por tu compra! <i class="bi bi-emoji-laughing"></i></p>
             </div>
         </div>
         <div id="resumen-compra" class="disabled">
-            CODIGO EN JS
+            <!-- El resumen de compra se mostrará aquí desde JavaScript -->
         </div>
-        <button id="imprimir-resumen" class="boton-imprimir">Imprimir Resumen</button>
+        <button id="imprimir-resumen" class="boton-imprimir disabled">Imprimir Resumen</button>
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
